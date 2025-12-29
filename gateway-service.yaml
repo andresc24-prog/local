@@ -16,11 +16,13 @@ spring:
       discovery:
         locator:
           enabled: true
-      routes: #Placeholders, luego de hacer los controllers se cambian
-        - id: student-service
-          uri: lb://student-service
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: tool-service
+          uri: lb://tool-service
           predicates:
-            - Path=/student/**
+            - Path=/api/tools/**, /api/tool-items/**, /api/categories/**
         - id: book-service
           uri: lb://book-service
           predicates:
@@ -29,3 +31,15 @@ spring:
           uri: lb://pet-service
           predicates:
             - Path=/pet/**
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            # En local usas localhost, en Minikube usarás el nombre del servicio
+            issuer-uri: http://localhost:8085/realms/ToolRent
+        registration:
+          keycloak:
+            client-id: gateway-client
+            client-secret: zMYHsXfBqJ3lDhGoaOp0iGUnsTHGVOjJ
+            scope: openid, profile, email
