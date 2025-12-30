@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8090
   
 eureka:
   client:
@@ -23,14 +23,18 @@ spring:
           uri: lb://tool-service
           predicates:
             - Path=/api/tools/**, /api/tool-items/**, /api/categories/**
-        - id: book-service
-          uri: lb://book-service
+        - id: kardex-service
+          uri: lb://kardex-service
           predicates:
-            - Path=/book/**
-        - id: pet-service
-          uri: lb://pet-service
+            - Path=/api/kardex/**
+        - id: user-service
+          uri: lb://user-service
           predicates:
-            - Path=/pet/**
+            - Path=/api/users/**
+        - id: tariff-service
+          uri: lb://tariff-service
+          predicates:
+            - Path=/api/tariffs/**
   security:
     oauth2:
       client:
