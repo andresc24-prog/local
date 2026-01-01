@@ -22,7 +22,7 @@ spring:
         - id: tool-service
           uri: lb://tool-service
           predicates:
-            - Path=/api/tools/**, /api/tool-items/**, /api/categories/**
+            - Path=/api/tools/**,/api/tool-items/**,/api/categories/**
         - id: kardex-service
           uri: lb://kardex-service
           predicates:
