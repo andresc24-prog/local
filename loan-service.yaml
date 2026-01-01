@@ -5,7 +5,7 @@ spring:
   # Configuración de Base de Datos
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5435/loan_DB
+    url: jdbc:postgresql://localhost:5433/loan_DB
     password: sq84
   jpa:
     hibernate:
