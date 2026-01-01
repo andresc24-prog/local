@@ -35,6 +35,18 @@ spring:
           uri: lb://tariff-service
           predicates:
             - Path=/api/tariffs/**
+        - id: client-service
+          uri: lb://client-service
+          predicates:
+            - Path=/api/clients/**
+        - id: loan-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/api/loans/**
+        - id: report-service
+          uri: lb://report-service
+          predicates:
+            - Path=/api/reports/**
   security:
     oauth2:
       client:
