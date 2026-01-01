@@ -59,3 +59,7 @@ spring:
             client-id: gateway-client
             client-secret: zMYHsXfBqJ3lDhGoaOp0iGUnsTHGVOjJ
             scope: openid, profile, email
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8085/realms/ToolRent
+
