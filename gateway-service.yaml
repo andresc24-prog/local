@@ -65,7 +65,6 @@ spring:
       client:
         provider:
           keycloak:
-            # En local usas localhost, en Minikube usarás el nombre del servicio
             issuer-uri: http://localhost:8085/realms/ToolRent
         registration:
           keycloak:
