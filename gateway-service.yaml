@@ -16,7 +16,9 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "http://localhost:5173"
+            allowedOrigins:
+            - "http://localhost:5173"
+            - "https://typographically-goniac-mirella.ngrok-free.dev"
             allowedMethods:
               - GET
               - POST
